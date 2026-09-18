@@ -154,3 +154,32 @@ A feature is considered complete only when:
 6. Accessibility basics are checked.
 7. Production build passes.
 8. Developer journal is updated.
+
+
+
+## Reservations
+
+- [x] Reservations page foundation
+- [x] Reservation form
+- [x] Reservation Context
+- [x] Persistent reservation state
+- [x] Required-field validation
+- [x] Submission handling
+- [x] Loading state
+- [x] Reservation request success state
+- [x] Reservation summary
+- [x] Make Another Reservation flow
+- [x] Responsive styling
+- [x] Theme support
+- [x] Production build verification
+- [ ] Final cross-page QA
+
+### Reservations Architecture Milestone
+
+The Reservations experience now provides a complete frontend reservation-request workflow.
+
+Reservation information is managed through a dedicated context with localStorage persistence. The form validates required information before submission and provides explicit loading and success feedback.
+
+The current implementation intentionally simulates the reservation request because the Chops MVP does not yet have a backend availability or reservation-confirmation system.
+
+The architecture is prepared for a future reservation API without requiring the presentation layer to be rebuilt.

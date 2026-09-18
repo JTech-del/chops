@@ -8,6 +8,7 @@ import { CartProvider } from './context/cartContext.jsx';
 import { OrderProvider } from './context/orderContext.jsx';
 import { ThemeProvider } from './context/themeContext.jsx';
 import { ToastProvider } from './context/toastContext.jsx';
+import { ReservationProvider } from './context/reservationContext.jsx';
 
 import appRouter from './routes/appRoutes.jsx';
 
@@ -24,8 +25,10 @@ createRoot(document.getElementById('root')).render(
       <CartProvider>
         <OrderProvider>
           <ToastProvider>
-            <RouterProvider router={appRouter} />
-       
+       <ReservationProvider>
+        <RouterProvider router={appRouter} />
+        
+       </ReservationProvider>
           </ToastProvider>
         </OrderProvider>
       </CartProvider>

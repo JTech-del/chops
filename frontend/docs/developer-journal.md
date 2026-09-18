@@ -165,3 +165,124 @@ Food Details customization system.
 6. Do not introduce fake customer reviews or testimonials.
 7. Prefer reusable components over page-specific duplication.
 8. Keep the application production-oriented even while it remains a demo.
+
+## Reservations — Frontend Request Flow
+
+### Completed
+
+The Reservations experience was implemented as the next major Chops ordering-adjacent milestone.
+
+Completed functionality:
+
+- Reservations page foundation
+- Reservation form
+- Reservation Context
+- Persistent reservation form state
+- Required-field validation
+- Submission handling
+- Loading state
+- Reservation request success state
+- Reservation summary
+- Make Another Reservation flow
+- Responsive/mobile styling
+- Light/dark theme support
+- Production build verification
+
+### Reservation Context
+
+Reservation state is managed centrally through `ReservationContext`.
+
+The context stores:
+
+- date
+- time
+- guests
+- name
+- phone
+- special request
+
+Reservation form data persists through localStorage using:
+
+`chops-reservation`
+
+The context also manages:
+
+- `isSubmitting`
+- `isSubmitted`
+- `submitReservation()`
+- `resetReservation()`
+
+### Submission Architecture
+
+The frontend currently simulates a reservation request using a short asynchronous delay.
+
+The implementation intentionally uses:
+
+`Request Reservation`
+
+rather than:
+
+`Book Table`
+
+because no real availability or reservation backend exists yet.
+
+The success state communicates that the request has been received and that final confirmation would occur through the restaurant's reservation system.
+
+### Validation
+
+Required fields use native browser validation.
+
+The form submission handler:
+
+1. prevents the browser's default submission
+2. checks form validity
+3. reports invalid fields
+4. starts the simulated request
+5. displays the success state
+
+### Success Experience
+
+After submission, the form is replaced by a dedicated confirmation state.
+
+The confirmation includes:
+
+- success indicator
+- request-received messaging
+- customer name
+- reservation date
+- reservation time
+- guest count
+- phone number
+- frontend-demo clarification
+- Make Another Reservation action
+
+### Verification
+
+Production build passed after the reservation implementation.
+
+Browser verification confirmed:
+
+- required-field validation
+- successful submission
+- loading state
+- success state
+- reservation persistence
+- reset behavior
+- theme switching
+- responsive/mobile behavior
+
+### Future Backend Architecture
+
+The current frontend flow is designed to evolve into:
+
+Frontend request
+      ↓
+Reservation API
+      ↓
+Availability check
+      ↓
+Restaurant confirmation
+      ↓
+Confirmed reservation
+
+No backend availability logic is implemented at the current MVP stage.

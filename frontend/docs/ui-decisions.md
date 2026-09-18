@@ -147,3 +147,55 @@ Respect:
 
 ```css
 @media (prefers-reduced-motion: reduce)
+
+
+
+## Reservations — Request Experience
+
+### Reservation language
+
+The primary action uses:
+
+`Request Reservation`
+
+rather than:
+
+`Book Table`
+
+This accurately represents the current frontend-only implementation and avoids implying real-time table availability.
+
+### Form structure
+
+The reservation form collects:
+
+- Date
+- Preferred time
+- Number of guests
+- Full name
+- Phone number
+- Optional special request
+
+Required fields are clearly marked.
+
+### Validation
+
+Native browser validation is used for the initial MVP.
+
+This provides accessible field validation without introducing unnecessary validation dependencies.
+
+### Submission feedback
+
+Submitting the form produces an explicit loading state:
+
+`Sending Request...`
+
+After the simulated request completes, the form transitions into a dedicated success state.
+
+This follows the project-wide feedback principle:
+
+```text
+User action
+    ↓
+Processing feedback
+    ↓
+Clear result
