@@ -1,0 +1,167 @@
+# Chops — Developer Journal
+
+## Project Overview
+
+Chops is a portfolio-grade restaurant ordering web application built
+to demonstrate modern frontend engineering, responsive UX, reusable
+React architecture, state management, and production-oriented design.
+
+The application is intentionally being developed in phases, with each
+phase verified before the next phase begins.
+
+---
+
+# Development Log
+
+## Phase 1 — Project Foundation
+
+### Completed
+- Initialized Vite + React application.
+- Established project structure.
+- Configured React Router.
+- Established lowercase file and folder naming convention.
+- Confirmed local development server.
+- Confirmed production build.
+
+### Verification
+- `npm run dev` — passed
+- `npm run build` — passed
+
+---
+
+## Phase 2 — Application Shell
+
+### Completed
+- Navbar
+- Footer
+- Mobile bottom navigation
+- Global application layout
+- Route structure
+
+### Verification
+- Desktop layout checked
+- Mobile navigation checked
+- Production build passed
+
+---
+
+## Phase 3 — Theme System
+
+### Completed
+- Global light/dark theme system
+- CSS design tokens
+- Theme persistence with localStorage
+- System preference detection
+- Initial theme flash prevention
+- Desktop/mobile theme toggle
+- Accessible theme controls
+
+### Storage
+- `chops-theme`
+
+### Verification
+- Light theme checked
+- Dark theme checked
+- Reload persistence checked
+- Production build passed
+
+---
+
+## Phase 4 — Menu
+
+### Completed
+- Menu data architecture
+- Category filtering
+- Menu cards
+- Food images
+- Ratings and review counts
+- Featured items
+- Add-to-cart interaction
+
+### Current Menu
+- 16 menu items
+- 7 categories
+
+### Verification
+- Category filtering checked
+- Food detail navigation checked
+- Add-to-cart checked
+- Production build passed
+
+---
+
+## Phase 5 — Food Details
+
+### Completed
+- Food information
+- Quantity selector
+- Rich dish details
+- Sticky ordering panel
+- Food gallery
+- Related dishes
+- Frequently ordered together
+
+### Customization Progress
+
+#### 8.1 — Customization Data Architecture
+Status: Complete
+
+Established:
+
+- Sizes
+- Add-ons
+- Individual option IDs
+- Option names
+- Option prices
+
+#### 8.2 — Menu Customization Data
+Status: Complete
+
+Customization data added to applicable menu items without changing
+their original base prices.
+
+#### 8.3 — Customization Component
+Status: Complete
+
+Implemented:
+
+- Size selection
+- Add-on selection
+- Radio controls
+- Checkbox controls
+- Selected states
+- Responsive layout
+- Theme-aware styling
+- Keyboard focus states
+
+### Verification
+- `npm run build` — passed
+
+---
+
+# Current Development State
+
+## Active Feature
+
+Food Details customization system.
+
+## Last Completed Step
+
+8.3 — Customization Component
+
+## Next Step
+
+8.4 — Dynamic Customization Pricing
+
+---
+
+# Engineering Rules
+
+1. Do not modify completed features unnecessarily.
+2. Verify each implementation step before proceeding.
+3. Preserve existing working functionality.
+4. Use lowercase naming for files and folders.
+5. Keep menu base prices separate from customization prices.
+6. Do not introduce fake customer reviews or testimonials.
+7. Prefer reusable components over page-specific duplication.
+8. Keep the application production-oriented even while it remains a demo.

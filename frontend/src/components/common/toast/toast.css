@@ -1,0 +1,133 @@
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: var(--z-index-toast, 1100);
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  min-width: 300px;
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 14px 16px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface);
+  color: var(--color-text);
+
+  box-shadow: var(--shadow-lg);
+
+  animation: toast-slide-in 220ms ease-out;
+}
+
+.toast--success {
+  border-color: color-mix(
+    in srgb,
+    var(--color-success) 45%,
+    var(--color-border)
+  );
+}
+
+.toast__icon {
+  display: grid;
+
+  flex-shrink: 0;
+
+  width: 28px;
+  height: 28px;
+
+  place-items: center;
+
+  border-radius: var(--radius-full);
+
+  background: color-mix(
+    in srgb,
+    var(--color-success) 15%,
+    transparent
+  );
+
+  color: var(--color-success);
+
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.toast__message {
+  flex: 1;
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+}
+
+.toast__close {
+  display: grid;
+
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  place-items: center;
+
+  border: 0;
+  border-radius: var(--radius-full);
+
+  background: transparent;
+  color: var(--color-text-muted);
+
+  font-size: 1.25rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.toast__close:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+}
+
+.toast__close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .toast {
+    right: 16px;
+    bottom: 84px;
+    left: 16px;
+
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+}

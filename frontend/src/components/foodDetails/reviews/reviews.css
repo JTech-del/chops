@@ -1,0 +1,114 @@
+.food-reviews {
+  margin-top: var(--space-12);
+  padding-top: var(--space-10);
+  border-top: 1px solid var(--color-border);
+}
+
+.food-reviews__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.food-reviews__eyebrow {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.food-reviews__title {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.food-reviews__empty {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  min-height: 180px;
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.food-reviews__empty-icon {
+  display: grid;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-surface-muted);
+  color: var(--color-text-light);
+  font-size: var(--font-size-xl);
+}
+
+.food-reviews__empty-content {
+  min-width: 0;
+}
+
+.food-reviews__empty-content h3 {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.food-reviews__empty-content p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .food-reviews {
+    margin-top: var(--space-10);
+    padding-top: var(--space-8);
+  }
+
+  .food-reviews__empty {
+    align-items: flex-start;
+    padding: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .food-reviews__title {
+    font-size: var(--font-size-xl);
+  }
+
+  .food-reviews__empty {
+    flex-direction: column;
+    gap: var(--space-4);
+    min-height: auto;
+    padding: var(--space-5);
+  }
+
+  .food-reviews__empty-icon {
+    width: 48px;
+    height: 48px;
+    font-size: var(--font-size-lg);
+  }
+
+  .food-reviews__empty-content p {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .food-reviews * {
+    scroll-behavior: auto;
+  }
+}
