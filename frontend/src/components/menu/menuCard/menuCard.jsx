@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { useCartContext } from '../../../context/cartContext.jsx';
-import { useToastContext } from '../../../context/toastContext.jsx';
+import { useCartContext } from '../../../context/useCartContext.js';
+import { useToastContext } from '../../../context/useToastContext.js';
 
 import './menuCard.css';
 

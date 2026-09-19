@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import CartItem from '../../components/cart/cartItem/cartItem.jsx';
 import featuredItems from '../../data/featuredItems.js';
-import { useCartContext } from '../../context/cartContext.jsx';
-import { useOrderContext } from '../../context/orderContext.jsx';
+import { useCartContext } from '../../context/useCartContext.js';
+import { useOrderContext } from '../../context/useOrderContext.js';
 
 import './cart.css';
 

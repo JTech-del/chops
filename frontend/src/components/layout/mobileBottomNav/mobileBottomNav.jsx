@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import { useCartContext } from '../../../context/cartContext.jsx';
+import { useCartContext } from '../../../context/useCartContext.js';
 
 import './mobileBottomNav.css';
 

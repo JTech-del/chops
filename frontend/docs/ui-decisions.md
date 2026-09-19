@@ -199,3 +199,76 @@ User action
 Processing feedback
     ↓
 Clear result
+
+
+## Contact Page
+
+### Editorial contact layout
+
+The Contact page uses a two-column desktop composition:
+
+* Contact information on the left
+* Contact form on the right
+
+This keeps the page visually balanced while allowing users to immediately find either contact details or the enquiry form.
+
+### Contact information presentation
+
+Contact details use compact rows with circular visual markers, labels, primary information, and supporting descriptions.
+
+This maintains consistency with the modern editorial direction used throughout Chops.
+
+### Form presentation
+
+The contact form is presented inside a raised surface/card rather than directly on the page background.
+
+The card creates a clear interaction area and visually separates the form from supporting restaurant information.
+
+### Form success state
+
+After submission, the form is replaced with a dedicated success state rather than displaying a small inline message.
+
+This gives the interaction a clear beginning and completion state.
+
+### Map treatment
+
+A visual map placeholder was used instead of a fabricated map location.
+
+The component is intentionally designed so that a real map integration can be introduced later without changing the overall page structure.
+
+### CTA treatment
+
+The final CTA provides two clear paths:
+
+* Explore Menu
+* Reserve a Table
+
+These actions connect the Contact page back to the two primary restaurant experiences.
+
+### Mobile behavior
+
+On smaller screens:
+
+* Contact information becomes a single-column layout.
+* Form fields stack vertically.
+* The map section becomes vertically arranged.
+* CTA buttons become full-width.
+* Typography scales down using responsive sizing.
+* Desktop hover transformations are reduced where appropriate.
+
+### Theme behavior
+
+All Contact page surfaces, typography, borders, controls, and interactive states use the existing Chops CSS variables.
+
+No page-specific light/dark color system was introduced.
+
+### Accessibility
+
+The page includes:
+
+* Native semantic form controls
+* Required fields where appropriate
+* Visible focus states
+* Accessible success status
+* Descriptive map placeholder labeling
+* Reduced-motion handling

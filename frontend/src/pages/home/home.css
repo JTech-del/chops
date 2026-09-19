@@ -108,7 +108,7 @@
   gap: var(--space-1);
 }
 
-.hero__detail strong {
+hero__detail strong {
   color: var(--color-black);
   font-family: var(--font-heading);
   font-size: var(--font-size-md);

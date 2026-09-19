@@ -1,0 +1,848 @@
+.about-page {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+/* ========================================
+   Shared
+   ======================================== */
+
+.about-page__eyebrow {
+  display: inline-flex;
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   Image placeholders
+   ======================================== */
+
+.about-page__image-placeholder {
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      color-mix(
+        in srgb,
+        var(--color-primary) 14%,
+        transparent
+      ),
+      transparent 45%
+    ),
+    var(--color-surface-muted);
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+/* ========================================
+   About imagery
+   ======================================== */
+
+.about-page__hero-media img,
+.about-page__story-media img,
+.about-page__experience-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-page__hero-media img {
+  border-radius: var(--radius-xl);
+}
+
+.about-page__story-media img {
+  border-radius: var(--radius-xl);
+}
+
+.about-page__experience-media img {
+  border-radius: 0;
+}
+/* ========================================
+   Hero
+   ======================================== */
+
+.about-page__hero {
+  padding:
+    var(--space-12)
+    var(--space-20)
+    var(--space-16);
+  background:
+    radial-gradient(
+      circle at 80% 10%,
+      color-mix(
+        in srgb,
+        var(--color-primary) 12%,
+        transparent
+      ),
+      transparent 38%
+    ),
+    var(--color-background);
+}
+
+.about-page__hero-inner {
+  display: grid;
+  min-height: 560px;
+  align-items: center;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--space-12);
+}
+
+.about-page__hero-content {
+  max-width: 620px;
+}
+
+.about-page__hero-content h1 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.about-page__hero-content p {
+  max-width: 540px;
+  margin: var(--space-7) 0 0;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.about-page__hero-media {
+  height: 560px;
+}
+
+.about-page__hero-media .about-page__image-placeholder {
+  border-radius: var(--radius-xl);
+}
+
+/* ========================================
+   Story
+   ======================================== */
+
+.about-page__story {
+  padding:
+    var(--space-16)
+    var(--space-20);
+}
+
+.about-page__story-inner {
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: clamp(
+    var(--space-10),
+    7vw,
+    var(--space-20)
+  );
+}
+
+.about-page__story-media {
+  min-height: 600px;
+}
+
+.about-page__story-content {
+  max-width: 580px;
+}
+
+.about-page__story-content
+  .section-heading {
+  margin-bottom: var(--space-7);
+}
+
+.about-page__story-content > p {
+  margin: 0 0 var(--space-5);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.about-page__story-content > p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   Beliefs
+   ======================================== */
+
+.about-page__beliefs {
+  padding:
+    var(--space-16)
+    var(--space-20);
+  background: var(--color-surface-muted);
+}
+
+.about-page__belief-grid {
+  display: grid;
+  margin-top: var(--space-10);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.about-page__belief-card {
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.about-page__belief-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(
+    in srgb,
+    var(--color-primary) 35%,
+    var(--color-border)
+  );
+  box-shadow: var(--shadow-md);
+}
+
+.about-page__belief-number {
+  display: block;
+  margin-bottom: var(--space-8);
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.about-page__belief-card h3 {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text);
+  font-size: 1.25rem;
+}
+
+.about-page__belief-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ========================================
+   Experience
+   ======================================== */
+
+.about-page__experience {
+  padding:
+    var(--space-16)
+    var(--space-20);
+}
+
+.about-page__experience-card {
+  display: grid;
+  min-height: 520px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.about-page__experience-media {
+  min-height: 520px;
+}
+
+.about-page__experience-media
+  .about-page__image-placeholder {
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+.about-page__experience-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(
+    var(--space-8),
+    6vw,
+    var(--space-12)
+  );
+}
+
+.about-page__experience-content h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.about-page__experience-content p {
+  max-width: 460px;
+  margin: var(--space-6) 0 0;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ========================================
+   Values
+   ======================================== */
+
+.about-page__values {
+  padding:
+    var(--space-16)
+    var(--space-20)
+    var(--space-20);
+}
+
+.about-page__values-grid {
+  display: grid;
+  margin-top: var(--space-10);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--color-border);
+}
+
+.about-page__value {
+  padding:
+    var(--space-8)
+    var(--space-7);
+  border-right: 1px solid var(--color-border);
+}
+
+.about-page__value:first-child {
+  padding-left: 0;
+}
+
+.about-page__value:last-child {
+  border-right: 0;
+}
+
+.about-page__value h3 {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text);
+  font-size: 1.35rem;
+}
+
+.about-page__value p {
+  max-width: 300px;
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ========================================
+   CTA
+   ======================================== */
+
+.about-page__cta {
+  padding:
+    var(--space-16)
+    var(--space-20)
+    var(--space-20);
+}
+
+.about-page__cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:
+    clamp(var(--space-10), 8vw, var(--space-16))
+    var(--space-8);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      color-mix(
+        in srgb,
+        var(--color-primary) 22%,
+        transparent
+      ),
+      transparent 55%
+    ),
+    var(--color-surface-muted);
+  text-align: center;
+}
+
+.about-page__cta-content h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.about-page__cta-content p {
+  margin: var(--space-5) 0 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.about-page__cta-actions {
+  display: flex;
+  margin-top: var(--space-8);
+  gap: var(--space-3);
+}
+
+.about-page__cta-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding:
+    0
+    var(--space-6);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.about-page__cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.about-page__cta-button:focus-visible {
+  outline: 3px solid
+    color-mix(
+      in srgb,
+      var(--color-primary) 35%,
+      transparent
+    );
+  outline-offset: 3px;
+}
+
+.about-page__cta-button--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.about-page__cta-button--primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.about-page__cta-button--secondary {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.about-page__cta-button--secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 1200px) {
+  .about-page__hero,
+  .about-page__story,
+  .about-page__beliefs,
+  .about-page__experience,
+  .about-page__values,
+  .about-page__cta {
+    padding-right: var(--space-10);
+    padding-left: var(--space-10);
+  }
+
+  .about-page__hero-inner {
+    grid-template-columns:
+      minmax(0, 0.85fr)
+      minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .about-page__hero-inner,
+  .about-page__story-inner,
+  .about-page__experience-card {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page__hero-inner {
+    min-height: auto;
+  }
+
+  .about-page__hero-media {
+    height: 480px;
+  }
+
+  .about-page__story-media {
+    min-height: 480px;
+  }
+
+  .about-page__story-content {
+    max-width: none;
+  }
+
+  .about-page__experience-media {
+    min-height: 420px;
+  }
+
+  .about-page__experience-card {
+    min-height: auto;
+  }
+
+  .about-page__belief-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page__belief-card {
+    padding: var(--space-7);
+  }
+}
+
+/*
+
+@media (max-width: 640px) {
+  .about-page__hero,
+  .about-page__story,
+  .about-page__beliefs,
+  .about-page__experience,
+  .about-page__values,
+  .about-page__cta {
+    padding-right: var(--space-5);
+    padding-left: var(--space-5);
+  }
+
+  .about-page__hero {
+    padding-top: var(--space-8);
+  }
+
+  .about-page__hero-content h1 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .about-page__hero-content p {
+    font-size: 1rem;
+  }
+
+  .about-page__hero-media {
+    height: 360px;
+  }
+
+  .about-page__story-media {
+    min-height: 360px;
+  }
+
+  .about-page__belief-grid {
+    margin-top: var(--space-7);
+  }
+
+  .about-page__belief-card:hover {
+    transform: none;
+  }
+
+  .about-page__experience-media {
+    min-height: 320px;
+  }
+
+  .about-page__experience-content {
+    padding: var(--space-7);
+  }
+
+  .about-page__values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page__value,
+  .about-page__value:first-child {
+    padding:
+      var(--space-6)
+      0;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .about-page__value:last-child {
+    border-bottom: 0;
+  }
+
+  .about-page__cta {
+    padding-bottom: var(--space-10);
+  }
+
+  .about-page__cta-content {
+    padding:
+      var(--space-10)
+      var(--space-5);
+  }
+
+  .about-page__cta-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .about-page__cta-button {
+    width: 100%;
+  }
+}
+  */
+
+@media (max-width: 640px) {
+  /* ========================================
+     Mobile section spacing
+     ======================================== */
+
+  .about-page__hero,
+  .about-page__story,
+  .about-page__beliefs,
+  .about-page__experience,
+  .about-page__values,
+  .about-page__cta {
+    padding-right: var(--space-5);
+    padding-left: var(--space-5);
+  }
+
+  .about-page__hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-10);
+  }
+
+  .about-page__story {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+
+  .about-page__beliefs {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+
+  .about-page__experience {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+
+  .about-page__values {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+
+  .about-page__cta {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-10);
+  }
+
+  /* ========================================
+     Hero
+     ======================================== */
+
+  .about-page__hero-inner {
+    gap: var(--space-8);
+  }
+
+  .about-page__hero-content h1 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+    line-height: 0.98;
+  }
+
+  .about-page__hero-content p {
+    margin-top: var(--space-5);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-page__hero-media {
+    height: 340px;
+  }
+
+  .about-page__image-placeholder {
+    border-radius: var(--radius-lg);
+  }
+
+  /* ========================================
+     Story
+     ======================================== */
+
+  .about-page__story-inner {
+    gap: var(--space-8);
+  }
+
+  .about-page__story-media {
+    min-height: 340px;
+  }
+
+  .about-page__story-content {
+    width: 100%;
+  }
+
+  .about-page__story-content
+    .section-heading {
+    margin-bottom: var(--space-6);
+  }
+
+  .about-page__story-content > p {
+    margin-bottom: var(--space-5);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  /* ========================================
+     Belief cards
+     ======================================== */
+
+  .about-page__belief-grid {
+    margin-top: var(--space-8);
+    gap: var(--space-4);
+  }
+
+  .about-page__belief-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+  }
+
+  .about-page__belief-card:hover {
+    transform: none;
+  }
+
+  .about-page__belief-number {
+    margin-bottom: var(--space-6);
+  }
+
+  .about-page__belief-card h3 {
+    margin-bottom: var(--space-3);
+    font-size: 1.15rem;
+  }
+
+  .about-page__belief-card p {
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+
+  /* ========================================
+     Experience card
+     ======================================== */
+
+  .about-page__experience-card {
+    border-radius: var(--radius-lg);
+  }
+
+  .about-page__experience-media {
+    min-height: 200px;
+  }
+.about-page__experience-media img {
+  object-position: center center;
+}
+  .about-page__experience-content {
+  padding: 1.5rem;
+  }
+
+  .about-page__experience-content h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.05; 
+      
+  }
+
+  .about-page__experience-content p {
+    margin-top: var(--space-5);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  /* ========================================
+     Values
+     ======================================== */
+
+  .about-page__values-grid {
+    margin-top: var(--space-7);
+    grid-template-columns: 1fr;
+  }
+
+  .about-page__value,
+  .about-page__value:first-child {
+    padding:
+      var(--space-6)
+      0;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .about-page__value:first-child {
+    padding-top: var(--space-6);
+  }
+
+  .about-page__value:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .about-page__value h3 {
+    margin-bottom: var(--space-3);
+    font-size: 1.2rem;
+  }
+
+  .about-page__value p {
+    max-width: none;
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+
+  /* ========================================
+     CTA
+     ======================================== */
+
+  .about-page__cta-content {
+    padding:
+      var(--space-10)
+      var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+
+  .about-page__cta-content h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .about-page__cta-content p {
+    max-width: 300px;
+    margin-top: var(--space-5);
+    line-height: 1.7;
+  }
+
+  .about-page__cta-actions {
+    width: 100%;
+    margin-top: var(--space-7);
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .about-page__cta-button {
+    width: 100%;
+    min-height: 52px;
+  }
+}
+
+/* ========================================
+   Reduced motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page__belief-card,
+  .about-page__cta-button {
+    transition: none;
+  }
+
+  .about-page__belief-card:hover,
+  .about-page__cta-button:hover {
+    transform: none;
+  }
+}
+
+
+

@@ -157,7 +157,6 @@
 
 .hero__detail strong {
   color: var(--color-text);
-
   font-family: var(--font-family-heading);
   font-size: var(--font-size-md);
 }

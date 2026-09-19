@@ -1,7 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
 
 import './foodGallery.css';
-
+import { useMemo, useState } from 'react';
 function FoodGallery({
   image,
   images = [],
@@ -16,11 +15,12 @@ function FoodGallery({
     return image ? [image] : [];
   }, [image, images]);
 
-  const [activeIndex, setActiveIndex] = useState(0);
+const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    setActiveIndex(0);
-  }, [galleryImages]);
+const safeActiveIndex = Math.min(
+  activeIndex,
+  Math.max(galleryImages.length - 1, 0),
+);
 
   const hasMultipleImages = galleryImages.length > 1;
 
@@ -64,7 +64,7 @@ function FoodGallery({
     );
   }
 
-  const activeImage = galleryImages[activeIndex];
+ const activeImage = galleryImages[safeActiveIndex];
 
   return (
     <div
@@ -75,7 +75,7 @@ function FoodGallery({
       <div className="food-gallery__main">
         <img
           src={activeImage}
-          alt={`${name} view ${activeIndex + 1}`}
+          alt={`${name} view ${safeActiveIndex + 1}`}
         />
 
         {featured && (
@@ -117,14 +117,14 @@ function FoodGallery({
               key={`${galleryImage}-${index}`}
               type="button"
               className={`food-gallery__thumbnail ${
-                activeIndex === index
+              safeActiveIndex === index
                   ? 'food-gallery__thumbnail--active'
                   : ''
               }`}
               onClick={() => setActiveIndex(index)}
               aria-label={`View ${name} image ${index + 1}`}
               aria-current={
-                activeIndex === index
+              safeActiveIndex === index
                   ? 'true'
                   : undefined
               }
@@ -141,7 +141,7 @@ function FoodGallery({
 
       {hasMultipleImages && (
         <p className="food-gallery__counter">
-          {activeIndex + 1} / {galleryImages.length}
+          {safeActiveIndex + 1} / {galleryImages.length}
         </p>
       )}
     </div>

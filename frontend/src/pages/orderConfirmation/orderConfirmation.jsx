@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { useOrderContext } from '../../context/orderContext.jsx';
+import { useOrderContext } from '../../context/useOrderContext.js';
 import { menuItems } from '../../data/menuData.js';
 
 import './orderConfirmation.css';
@@ -378,3 +378,4 @@ return ( <main className="order-confirmation-page"> <section className="order-co
 }
 
 export default OrderConfirmation;
+

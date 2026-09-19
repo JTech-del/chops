@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useCartContext } from '../../context/cartContext.jsx';
+import { useCartContext } from '../../context/useCartContext.js';
 
 import './orderTracking.css';
 

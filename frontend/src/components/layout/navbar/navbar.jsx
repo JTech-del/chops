@@ -1,15 +1,49 @@
-
-
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import ThemeToggle from '../../common/themeToggle/themeToggle.jsx';
-import { useCartContext } from '../../../context/cartContext.jsx';
-
+import { useCartContext } from '../../../context/useCartContext.js';
 
 import './navbar.css';
 
+const navigationItems = [
+  {
+    label: 'Home',
+    to: '/',
+  },
+  {
+    label: 'Menu',
+    to: '/menu',
+  },
+  {
+    label: 'Reservations',
+    to: '/reservations',
+  },
+  {
+    label: 'About',
+    to: '/about',
+  },
+  {
+    label: 'Gallery',
+    to: '/gallery',
+  },
+  {
+    label: 'Contact',
+    to: '/contact',
+  },
+];
+
 function Navbar() {
   const { cartCount } = useCartContext();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen((currentState) => !currentState);
+  };
 
   return (
     <header className="navbar">
@@ -18,80 +52,39 @@ function Navbar() {
           className="navbar__logo"
           to="/"
           aria-label="Chops home"
+          onClick={closeMenu}
         >
           <span className="navbar__logo-mark">C</span>
-          <span className="navbar__logo-text">Chops</span>
+          <span className="navbar__logo-text">
+            Chops
+          </span>
         </Link>
 
         <nav
-          className="navbar__nav"
+          className={`navbar__nav ${
+            isMenuOpen
+              ? 'navbar__nav--open'
+              : ''
+          }`}
           aria-label="Main navigation"
         >
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `navbar__link ${
-                isActive ? 'navbar__link--active' : ''
-              }`
-            }
-          >
-            Home
-          </NavLink>
-
-          <NavLink
-            to="/menu"
-            className={({ isActive }) =>
-              `navbar__link ${
-                isActive ? 'navbar__link--active' : ''
-              }`
-            }
-          >
-            Menu
-          </NavLink>
-
-          <NavLink
-            to="/reservations"
-            className={({ isActive }) =>
-              `navbar__link ${
-                isActive ? 'navbar__link--active' : ''
-              }`
-            }
-          >
-            Reservations
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `navbar__link ${
-                isActive ? 'navbar__link--active' : ''
-              }`
-            }
-          >
-            About
-          </NavLink>
-
-          <NavLink
-            to="/gallery"
-            className={({ isActive }) =>
-              `navbar__link ${
-                isActive ? 'navbar__link--active' : ''
-              }`
-            }
-          >
-            Gallery
-          </NavLink>
-
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `navbar__link ${
-                isActive ? 'navbar__link--active' : ''
-              }`
-            }
-          >
-            Contact
-          </NavLink>
+          {navigationItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.to === '/'}
+              className={({ isActive }) =>
+                `navbar__link ${
+                  isActive
+                    ? 'navbar__link--active'
+                    : ''
+                }`
+              }
+              onClick={closeMenu}
+            >
+              {item.label}
+            </NavLink>
+          ))}
         </nav>
 
         <div className="navbar__actions">
@@ -101,6 +94,7 @@ function Navbar() {
             className="navbar__cart"
             to="/cart"
             aria-label={`View shopping cart with ${cartCount} items`}
+            onClick={closeMenu}
           >
             <span
               className="navbar__cart-icon"
@@ -119,10 +113,20 @@ function Navbar() {
           </Link>
 
           <button
-            className="navbar__menu-button"
+            className={`navbar__menu-button ${
+              isMenuOpen
+                ? 'navbar__menu-button--open'
+                : ''
+            }`}
             type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
+            aria-label={
+              isMenuOpen
+                ? 'Close navigation menu'
+                : 'Open navigation menu'
+            }
+            aria-expanded={isMenuOpen}
+            aria-controls="chops-main-navigation"
+            onClick={toggleMenu}
           >
             <span />
             <span />

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import featuredItems from '../../../data/featuredItems.js';
-import { useCartContext } from '../../../context/cartContext.jsx';
+import { useCartContext } from '../../../context/useCartContext.js';
 
 import './featuredMenu.css';
 

@@ -1,4 +1,4 @@
-import { useThemeContext } from '../../../context/themeContext.jsx';
+import { useThemeContext } from '../../../context/useThemeContext.js';
 import './themeToggle.css';
 
 function ThemeToggle() {

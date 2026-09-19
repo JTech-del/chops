@@ -286,3 +286,69 @@ Restaurant confirmation
 Confirmed reservation
 
 No backend availability logic is implemented at the current MVP stage.
+
+
+## Contact Page — Foundation Complete
+
+### Date
+
+September 2026
+
+### Status
+
+Completed and verified.
+
+### What was implemented
+
+Built the Chops Contact page from an empty placeholder into a complete responsive restaurant contact experience.
+
+The page now includes:
+
+* Contact hero section
+* Contact information section
+* Visit Us information
+* Contact form
+* Name, email, phone, subject, and message fields
+* Native browser form validation
+* Demo submission state
+* "Send Another Message" reset flow
+* Map/location-ready visual placeholder
+* Menu CTA
+* Reservation CTA
+* Responsive desktop, tablet, and mobile layouts
+* Light and dark theme support
+* Keyboard focus states
+* Reduced-motion support
+
+### Contact form behavior
+
+The form currently operates as a frontend-only demo.
+
+Submission is intercepted with `preventDefault()` and transitions to a success state without making a network request.
+
+The success state explicitly communicates that a real contact service can be connected when backend functionality is introduced.
+
+### Location handling
+
+No real-world restaurant address or map location was fabricated.
+
+The Visit Us section is intentionally architecture-ready and uses a location placeholder until actual business information is available.
+
+### Verification
+
+* `npm run build` passed successfully.
+* Contact route renders successfully.
+* Form validation was implemented.
+* Submission state was implemented.
+* Responsive styling was implemented.
+* Theme-aware styling was implemented.
+
+### Architecture decision
+
+The Contact page remains frontend-only for the current MVP.
+
+A future backend integration can replace the simulated submission while preserving the existing UI and form structure.
+
+### Workflow completed
+
+**Plan → Implement → Test → Verify → Document → Continue**

@@ -725,18 +725,23 @@ tracking-current__time {
 .tracking-help a:hover {
   text-decoration: underline;
 }
-
 /* =========================================
    Responsive
 ========================================= */
 
 @media (max-width: 900px) {
   .order-tracking-page__layout {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .order-tracking-page__sidebar {
+    position: static;
     order: -1;
+    width: 100%;
+    display: grid;
+    gap: 20px;
   }
 
   .tracking-card--summary {
@@ -758,8 +763,34 @@ tracking-current__time {
     padding: 40px 0 80px;
   }
 
+  /*
+   * All cards remain in normal document flow.
+   * Nothing sticks or overlaps while scrolling.
+   */
+  .tracking-card,
+  .tracking-card--current,
+  .tracking-card--summary,
+  .tracking-card--delivery {
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .tracking-card {
     padding: 22px;
+  }
+
+  .tracking-current {
+    position: static;
+  }
+
+  .tracking-item {
+    position: static;
   }
 }
 
@@ -774,6 +805,20 @@ tracking-current__time {
 
   .order-tracking-page__order-id {
     width: 100%;
+  }
+
+  .tracking-card,
+  .tracking-card--current,
+  .tracking-card--summary,
+  .tracking-card--delivery {
+    position: static;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .tracking-card {
+    padding: 18px;
   }
 
   .tracking-current {
@@ -796,6 +841,7 @@ tracking-current__time {
   }
 
   .tracking-item {
+    position: static;
     grid-template-columns: 64px minmax(0, 1fr);
   }
 
@@ -816,6 +862,15 @@ tracking-current__time {
 }
 
 @media (max-width: 380px) {
+  .tracking-card,
+  .tracking-card--current,
+  .tracking-card--summary,
+  .tracking-card--delivery {
+    position: static;
+    width: 100%;
+    margin: 0;
+  }
+
   .tracking-card {
     padding: 18px;
   }
@@ -836,5 +891,3 @@ tracking-current__time {
     transition: none;
   }
 }
-
-

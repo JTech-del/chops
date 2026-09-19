@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
-import { useCartContext } from '../../../context/cartContext.jsx';
-import { useToastContext } from '../../../context/toastContext.jsx';
+import { useCartContext } from '../../../context/useCartContext.js';
+import { useToastContext } from '../../../context/useToastContext.js';
 import { menuItems } from '../../../data/menuData.js';
 
 import './frequentlyOrdered.css';

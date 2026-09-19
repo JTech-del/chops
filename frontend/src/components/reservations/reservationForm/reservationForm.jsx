@@ -1,4 +1,4 @@
-import { useReservationContext } from '../../../context/reservationContext.jsx';
+import { useReservationContext } from '../../../context/useReservationContext.js';
 
 import './reservationForm.css';
 

@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { useCartContext } from '../../context/cartContext.jsx';
-import { useOrderContext } from '../../context/orderContext.jsx';
+import { useCartContext } from '../../context/useCartContext.js';
+import { useOrderContext } from '../../context/useOrderContext.js';
 
 import './payment.css';
 

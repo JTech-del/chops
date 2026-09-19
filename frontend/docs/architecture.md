@@ -159,3 +159,79 @@ After updating the four documentation files, run:
 
 ```powershell
 npm run build
+
+
+
+## Contact Page Architecture
+
+### Current implementation
+
+The Contact page is currently a frontend-only feature.
+
+Its submission flow is intentionally simulated so the page can demonstrate the complete user experience before backend services are introduced.
+
+### Current flow
+
+```text
+User fills form
+      ↓
+Native browser validation
+      ↓
+Submit
+      ↓
+Frontend intercepts submission
+      ↓
+Success state
+```
+
+No external API request is currently made.
+
+### Future production flow
+
+The architecture is designed to evolve toward:
+
+```text
+Contact Form
+      ↓
+Client validation
+      ↓
+Contact API
+      ↓
+Server validation
+      ↓
+Spam / abuse protection
+      ↓
+Message persistence
+      ↓
+Email notification
+      ↓
+Customer confirmation
+```
+
+### Data architecture
+
+The current form does not persist contact submissions.
+
+When backend functionality is introduced, contact submissions should become server-managed data rather than relying on browser storage.
+
+### Location architecture
+
+The current Visit Us section does not contain a fabricated geographic address or map integration.
+
+A future implementation can connect:
+
+```text
+Restaurant location data
+        ↓
+Map provider
+        ↓
+Interactive map
+```
+
+without requiring the Contact page's primary layout to change.
+
+### Architectural principle
+
+The Contact page demonstrates the intended production UX while deliberately separating presentation from future backend concerns.
+
+The current frontend implementation therefore remains useful when the project transitions from demo/MVP functionality toward a full-stack restaurant application.

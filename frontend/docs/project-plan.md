@@ -183,3 +183,50 @@ Reservation information is managed through a dedicated context with localStorage
 The current implementation intentionally simulates the reservation request because the Chops MVP does not yet have a backend availability or reservation-confirmation system.
 
 The architecture is prepared for a future reservation API without requiring the presentation layer to be rebuilt.
+
+
+## Contact Page
+
+**Status: ✅ Complete**
+
+The Contact page foundation has been completed as part of the Chops restaurant MVP.
+
+### Completed scope
+
+* [x] Contact hero
+* [x] Contact information
+* [x] Phone information
+* [x] Email information
+* [x] Opening hours
+* [x] Contact form
+* [x] Name field
+* [x] Email field
+* [x] Phone field
+* [x] Subject selection
+* [x] Message field
+* [x] Native form validation
+* [x] Demo submission state
+* [x] Submission success state
+* [x] Form reset flow
+* [x] Visit Us section
+* [x] Map/location-ready placeholder
+* [x] Menu CTA
+* [x] Reservation CTA
+* [x] Responsive layout
+* [x] Dark/light theme support
+* [x] Accessibility focus states
+* [x] Reduced-motion support
+* [x] Production build verification
+
+### Future enhancement
+
+When Chops receives backend functionality, the simulated form submission can be replaced with a real contact API without requiring a major UI redesign.
+
+Possible future integrations include:
+
+* Contact API endpoint
+* Server-side validation
+* Spam protection
+* Email notification
+* Customer confirmation email
+* Submission status/error handling
